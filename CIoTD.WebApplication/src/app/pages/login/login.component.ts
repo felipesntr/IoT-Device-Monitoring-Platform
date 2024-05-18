@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginResponse } from '../../../@types/login';
+import { LoginResponse } from '../../../@types/auth/login';
 import { baseApi } from '../../../config/baseApi';
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginComponent {
   ngOnInit() {
     const token = localStorage.getItem('token');
     if (token) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/devices']);
     }
   }
 
@@ -25,7 +25,7 @@ export class LoginComponent {
     this.http.post<LoginResponse>(`${baseApi.url}/auth/login`, this.loginDto,).subscribe(
       (result: LoginResponse) => {
         if (result.token) {
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/devices']);
           localStorage.setItem('token', result.token);
         }
       },

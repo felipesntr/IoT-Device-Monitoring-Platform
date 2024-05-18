@@ -11,7 +11,7 @@ export class RegisterComponent {
   ngOnInit() {
     const token = localStorage.getItem('token');
     if (token) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/devices']);
     }
   }
 }
