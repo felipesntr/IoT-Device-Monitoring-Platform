@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34526.213
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIoTD.Domain", "CIoTD.Domain\CIoTD.Domain.csproj", "{E03869FC-4607-488E-9850-5A33267F7494}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIoTD.Domain", "CIoTD.Domain\CIoTD.Domain.csproj", "{E03869FC-4607-488E-9850-5A33267F7494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIoTD.WebApi", "CIoTD.WebApi\CIoTD.WebApi.csproj", "{8DBFA34C-4863-4D57-800A-CB6C4F080C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIoTD.WebApi", "CIoTD.WebApi\CIoTD.WebApi.csproj", "{8DBFA34C-4863-4D57-800A-CB6C4F080C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIoTD.Application", "CIoTD.Application\CIoTD.Application.csproj", "{905BFF37-E46E-4C6B-9D39-655CB71CCBE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIoTD.Application", "CIoTD.Application\CIoTD.Application.csproj", "{905BFF37-E46E-4C6B-9D39-655CB71CCBE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIoTD.Infrastructure", "CIoTD.Infrastructure\CIoTD.Infrastructure.csproj", "{FB4E825C-3704-4F58-A487-D22DE7CE25CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIoTD.Infrastructure", "CIoTD.Infrastructure\CIoTD.Infrastructure.csproj", "{FB4E825C-3704-4F58-A487-D22DE7CE25CB}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "CIoTD.WebApplication", "CIoTD.WebApplication\CIoTD.WebApplication.esproj", "{606CDB58-88D3-4A6A-A783-974A4EBF15D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{FB4E825C-3704-4F58-A487-D22DE7CE25CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4E825C-3704-4F58-A487-D22DE7CE25CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4E825C-3704-4F58-A487-D22DE7CE25CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

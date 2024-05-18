@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <a href="/" class="logo">CIoTD</a>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <div class="menu">
+    <a routerLink="/devices" routerLinkActive="active">Devices</a>
+    <a routerLink="/settings" routerLinkActive="active">Settings</a>
+
+    <div class="avatar">
+      <mat-icon>
+        account_circle
+      </mat-icon>
+    </div>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

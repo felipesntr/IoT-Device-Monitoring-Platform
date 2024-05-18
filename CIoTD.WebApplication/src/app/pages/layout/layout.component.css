@@ -1,0 +1,45 @@
+.example-fill-remaining-space {
+  font-size: 1rem;
+  flex: 1 1 auto;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.menu a {
+  color: #ffffff90;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+.menu .avatar {
+  background: #ffffff60;
+  border-radius: 50%;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.menu .avatar:hover {
+  background: #ffffff90;
+}
