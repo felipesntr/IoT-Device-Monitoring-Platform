@@ -1,0 +1,6 @@
+@CIoTD.WebApi_HostAddress = http://localhost:5073
+
+GET {{CIoTD.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
