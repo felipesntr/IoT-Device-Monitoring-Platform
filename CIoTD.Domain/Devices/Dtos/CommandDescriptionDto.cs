@@ -5,4 +5,8 @@ public sealed record CommandDescriptionDto(
     string Description,
     CommandDto Command,
     string Result,
-    string Format);
+    string Format)
+{
+    public bool SomeParameterAreNull()
+        => Command.Parameters.Any(x => x == null);
+}

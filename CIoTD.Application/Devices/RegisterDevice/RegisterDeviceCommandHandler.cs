@@ -4,7 +4,7 @@ using CIoTD.Domain.Devices;
 
 namespace CIoTD.Application.Devices.CreateDevice;
 
-internal sealed class RegisterDeviceCommandHandler : ICommandHandler<RegisterDeviceCommand, string>
+public sealed class RegisterDeviceCommandHandler : ICommandHandler<RegisterDeviceCommand, string>
 {
     public readonly IDeviceRepository _deviceRepository;
 
@@ -18,7 +18,10 @@ internal sealed class RegisterDeviceCommandHandler : ICommandHandler<RegisterDev
         var exist = await _deviceRepository.GetDeviceByIdentifierAsync(request.Identifier);
         if (exist != null)
             return Result.Failure<string>(new Error("Device.Exist", "Já existe um dispositivo com esse identificador."));
-        
+
+        if (!request.IsValid())
+            return Result.Failure<string>(new Error("RegisterDeviceCommand", "Command inválido."));
+
         var device = new Device
         {
             Identifier = request.Identifier,

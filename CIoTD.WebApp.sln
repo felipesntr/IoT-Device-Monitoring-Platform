@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIoTD.Infrastructure", "CIo
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "CIoTD.WebApplication", "CIoTD.WebApplication\CIoTD.WebApplication.esproj", "{606CDB58-88D3-4A6A-A783-974A4EBF15D3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A5EB73DF-D3D2-4AC3-9BE7-A3D66083A4DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIoTD.Application.Tests", "CIoTD.Application.Tests\CIoTD.Application.Tests.csproj", "{1C1B1384-D825-4957-BC96-98F7C9071B1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,9 +45,16 @@ Global
 		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{606CDB58-88D3-4A6A-A783-974A4EBF15D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1C1B1384-D825-4957-BC96-98F7C9071B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1B1384-D825-4957-BC96-98F7C9071B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1B1384-D825-4957-BC96-98F7C9071B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1B1384-D825-4957-BC96-98F7C9071B1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C1B1384-D825-4957-BC96-98F7C9071B1E} = {A5EB73DF-D3D2-4AC3-9BE7-A3D66083A4DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {66EDAF45-A801-42E7-A9F3-8FBEFA5D38E3}

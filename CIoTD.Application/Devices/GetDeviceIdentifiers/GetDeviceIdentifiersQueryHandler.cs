@@ -2,7 +2,7 @@
 using CIoTD.Domain.Abstractions;
 using CIoTD.Domain.Devices;
 
-namespace CIoTD.Application.Devices.GetDeviceIdentifiersQuery;
+namespace CIoTD.Application.Devices.GetDeviceIdentifiers;
 
 internal sealed class GetDeviceIdentifiersQueryHandler : IQueryHandler<GetDeviceIdentifiersQuery, List<string>>
 {

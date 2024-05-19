@@ -1,5 +1,6 @@
 ﻿using CIoTD.Application.Devices.CreateDevice;
 using CIoTD.Application.Devices.GetDeviceByIdentifier;
+using CIoTD.Application.Devices.GetDeviceIdentifiers;
 using CIoTD.Application.Devices.GetDeviceIdentifiersQuery;
 using CIoTD.Application.Devices.UpdateDevice;
 using CIoTD.Domain.Devices;
