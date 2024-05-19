@@ -1,6 +1,10 @@
 <h2>Seleção de Dispositivos</h2>
 <div class="mat-elevation-z2">
-  <table mat-table [dataSource]="devices" class="mat-table">
+  <div *ngIf="isLoading" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <table *ngIf="!isLoading" mat-table [dataSource]="devices" class="mat-table">
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
         <mat-checkbox (change)="$event ? masterToggle() : null" [checked]=""

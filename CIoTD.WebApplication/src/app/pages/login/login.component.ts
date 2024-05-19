@@ -13,6 +13,7 @@ import { firstValueFrom } from 'rxjs';
 export class LoginComponent {
   loginDto = { username: '', password: '' };
   isLoading = false;
+  error = '';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -26,6 +27,7 @@ export class LoginComponent {
   async login(event: Event) {
     event.preventDefault();
     this.isLoading = true;
+    this.error = '';
     try {
       const result: LoginResponse = await firstValueFrom(this.http.post<LoginResponse>(`${baseApi.url}/auth/login`, this.loginDto));
       if (result.token) {
@@ -33,8 +35,9 @@ export class LoginComponent {
         console.log(result.token)
         this.router.navigate(['/devices']);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      this.isLoading = false;
+      this.error = "Username or password is incorrect";
     } finally {
       this.isLoading = false;
     }

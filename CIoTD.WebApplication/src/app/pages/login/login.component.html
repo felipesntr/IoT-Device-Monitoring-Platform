@@ -3,14 +3,17 @@
 </h2>
 <div class="container" id="container">
   <div class="form-container sign-in-container">
-    <div>
+    <div class="form">
       <h1>Login</h1>
       <input type="text" name="username" placeholder="Username" [(ngModel)]="loginDto.username" required />
       <input type="password" name="password" placeholder="Password" [(ngModel)]="loginDto.password" required />
       <button (click)="login($event)" class="btn" [disabled]="isLoading" [disabled]="isLoading">Sign In</button>
-    </div>
-    <div *ngIf="isLoading" class="loading-spinner">
-      <div class="spinner"></div>
+      <div *ngIf="isLoading" class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+      <div *ngIf="error !== ''" class="error-text">
+        {{error}}
+      </div>
     </div>
   </div>
   <div class="overlay-container">

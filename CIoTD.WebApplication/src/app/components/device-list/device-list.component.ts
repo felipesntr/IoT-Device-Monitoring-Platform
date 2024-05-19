@@ -12,10 +12,12 @@ export class DeviceListComponent implements OnInit {
   devices: { Identifier: string }[] = [];
   displayedColumns: string[] = ['select', 'Identifier'];
   selection = new SelectionModel<any>(true, []);
+  isLoading = false;
 
   constructor(private deviceService: DeviceService, private router: Router) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.deviceService.getDevices().subscribe(devices => {
       this.devices = devices.map(device => ({ Identifier: device }));
 
@@ -29,6 +31,7 @@ export class DeviceListComponent implements OnInit {
           }
         });
       }
+      this.isLoading = false;
     });
   }
 
