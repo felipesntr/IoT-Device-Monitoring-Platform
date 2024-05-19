@@ -3,25 +3,20 @@
 </h2>
 <div class="container" id="container">
   <div class="form-container sign-in-container">
-    <form action="#">
+    <div>
       <h1>Login</h1>
-      <span>or use your account</span>
       <input type="text" name="username" placeholder="Username" [(ngModel)]="loginDto.username" required />
       <input type="password" name="password" placeholder="Password" [(ngModel)]="loginDto.password" required />
-      <a href="#">Forgot your password?</a>
-      <button class="btn" (click)="login()">Sign In</button>
-    </form>
+      <button (click)="login($event)" class="btn" [disabled]="isLoading" [disabled]="isLoading">Sign In</button>
+    </div>
+    <div *ngIf="isLoading" class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
   </div>
   <div class="overlay-container">
     <div class="overlay">
-      <div class="overlay-panel overlay-left">
-        <h1>Welcome Back!</h1>
-        <p>To keep connected with us please login with your personal info</p>
-        <button class="ghost btn" id="signIn">Sign In</button>
-      </div>
       <div class="overlay-panel overlay-right">
-        <h1>Hello, Friend!</h1>
-        <p>Enter your personal details and start journey with us</p>
+        <h1>Hello</h1>
         <a class="ghost btn" id="signUp" href="/register">Sign Up</a>
       </div>
     </div>

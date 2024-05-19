@@ -1,0 +1,10 @@
+<h2>Configuração de Comandos</h2>
+<div *ngFor="let device of selectedDevices">
+  <h3>{{ device.Identifier }}</h3>
+  <div *ngFor="let command of availableCommands">
+    <mat-checkbox [(ngModel)]="device.commands[command]">{{ command }}</mat-checkbox>
+  </div>
+</div>
+<div class="actions">
+  <button mat-raised-button color="primary" (click)="saveCommands()">Save Commands</button>
+</div>

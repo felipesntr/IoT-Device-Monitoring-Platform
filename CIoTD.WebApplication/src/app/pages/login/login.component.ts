@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginResponse } from '../../../@types/auth/login';
 import { baseApi } from '../../../config/baseApi';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { baseApi } from '../../../config/baseApi';
 })
 export class LoginComponent {
   loginDto = { username: '', password: '' };
+  isLoading = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -21,16 +23,20 @@ export class LoginComponent {
     }
   }
 
-  login() {
-    this.http.post<LoginResponse>(`${baseApi.url}/auth/login`, this.loginDto,).subscribe(
-      (result: LoginResponse) => {
-        if (result.token) {
-          this.router.navigate(['/devices']);
-          localStorage.setItem('token', result.token);
-        }
-      },
-      (error) => {
+  async login(event: Event) {
+    event.preventDefault();
+    this.isLoading = true;
+    try {
+      const result: LoginResponse = await firstValueFrom(this.http.post<LoginResponse>(`${baseApi.url}/auth/login`, this.loginDto));
+      if (result.token) {
+        localStorage.setItem('token', result.token);
+        console.log(result.token)
+        this.router.navigate(['/devices']);
       }
-    );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.isLoading = false;
+    }
   }
 }

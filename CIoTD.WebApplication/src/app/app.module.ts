@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
-import { LayoutComponent } from './pages/layout/layout.component';
+import { LayoutComponent } from './components/layout/layout.component';
 import { DevicesComponent } from './pages/devices/devices.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -19,6 +19,9 @@ import { authInterceptor } from './interceptors/auth/auth.interceptor';
 import { MatButton } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { ConfigureCommandsComponent } from './pages/configure-commands/configure-commands.component';
+import { MatPseudoCheckboxModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,14 @@ import { MatButtonToggleGroup } from '@angular/material/button-toggle';
     RegisterComponent,
     DeviceListComponent,
     DevicesComponent,
+    ConfigureCommandsComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, FormsModule, MatToolbarModule,
     MatIconModule, MatTableModule, MatButtonToggleModule,
-    MatButton, MatButtonToggleGroup
+    MatButton, MatButtonToggleGroup, MatPseudoCheckboxModule, MatCheckboxModule
   ],
   providers: [
     provideAnimationsAsync(),

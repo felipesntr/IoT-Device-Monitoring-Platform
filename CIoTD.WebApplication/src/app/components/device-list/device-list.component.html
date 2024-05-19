@@ -1,14 +1,32 @@
-<div class="mat-elevation-z8">
+<h2>Seleção de Dispositivos</h2>
+<div class="mat-elevation-z2">
   <table mat-table [dataSource]="devices" class="mat-table">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null" [checked]=""
+          [indeterminate]="isSomeSelected()"></mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let device">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? toggleSelection(device) : null"
+          [checked]="selection.isSelected(device)"></mat-checkbox>
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="Identifier">
-      <th mat-header-cell *matHeaderCellDef style="font-weight: 600;"> Identifier </th>
+      <th mat-header-cell *matHeaderCellDef style="font-weight: 600;">Identifier</th>
       <td mat-cell *matCellDef="let device">
         <a [routerLink]="['/devices', device.Identifier]" class="link">
           {{device.Identifier}}
         </a>
       </td>
     </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
+<div class="actions">
+  <button mat-raised-button color="default" (click)="saveSelection()">
+    Monitor selected
+  </button>
 </div>

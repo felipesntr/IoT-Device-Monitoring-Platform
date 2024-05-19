@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
 export class LayoutComponent {
   constructor(private router: Router) { }
   ngOnInit() {
-    console.log('LayoutComponent initialized');
-
     const token = localStorage.getItem('token');
     if (!token) {
       this.router.navigate(['/login']);
